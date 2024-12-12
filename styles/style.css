@@ -1,0 +1,236 @@
+@charset "UTF-8";
+@font-face {
+  font-family: myFont;
+  src: url(/JasonHandwriting1.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "myFont", DFkai-sb, sans-serif;
+}
+
+html {
+  background-color: #caf6fc;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+body img.fixed-image {
+  min-height: 100vh;
+  position: fixed;
+  width: 100%;
+  z-index: -5;
+}
+body header {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #caf6fc;
+  align-items: center;
+  position: fixed; /* 將 header 固定在視口 */
+  top: 0; /* 固定在頁面的頂部 */
+  left: 0; /* 固定在頁面的左側 */
+  width: 100%; /* 使 header 寬度為 100% */
+  z-index: 10; /* 確保 header 在其他內容之上 */
+  background-color: rgb(255, 255, 255); /* 設置背景顏色，避免內容顯示在 header 後面 */
+  box-shadow: 0 10px 6px -6px;
+}
+body header section.logo {
+  flex: 2 1 200px;
+  display: flex;
+  align-items: center;
+}
+body header section.logo img {
+  width: 6vw; /* 設置圖片寬度為視口寬度的 6% */
+  height: 6vw;
+}
+body header section.logo h1 {
+  font-size: 2.5rem;
+}
+body header nav {
+  flex: 5 1 500px;
+}
+body header ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  font-size: 1.3rem;
+}
+body header ul li a {
+  color: black;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding-bottom: 0.3rem;
+}
+body header ul li a:hover {
+  color: #19c50a;
+  border-bottom: 3px solid #19c50a;
+}
+body main section.background-image {
+  min-height: 70vh;
+  background-image: url(../images/日本櫻花.jpg);
+  background-size: cover;
+  background-position: center;
+  transition: all 0.75s ease;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main div.filter {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  min-height: 70vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+body main h3 {
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+}
+body main section.info-circles {
+  background-color: white;
+  padding: 2rem 1rem;
+}
+body main section.info-circles h3 {
+  color: black;
+  font-size: 2.5rem;
+  text-align: center;
+}
+body main section.info-circles div.circles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body main section.info-circles div.circles div.circle {
+  padding: 1rem;
+  flex: 0 1 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main section.info-circles div.circles img {
+  border-radius: 50%;
+  padding: 0.3rem;
+  width: 80%;
+  transition: all 0.1s ease-in;
+  /* 當鼠標懸停在元素上時的樣式 */
+}
+body main section.info-circles div.circles img:hover {
+  border: 3px solid rgb(7, 119, 248);
+}
+body main section.info-circles div.circles p {
+  text-align: center;
+  font-size: 1.3rem;
+}
+body main section.empty-container {
+  min-height: 70vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main section.empty-container h3 {
+  font-size: 2rem;
+  color: #ffffff;
+}
+body main section.google-map {
+  background-color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+body main section.google-map h3 {
+  font-size: 2.5rem;
+  color: black;
+}
+body main section.google-map p {
+  font-size: 1.25rem;
+}
+body main section.google-map iframe {
+  width: 100%;
+  height: 40vh;
+}
+body footer {
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+body footer section.logo img {
+  width: 20vw;
+}
+body footer h3 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+body footer section.links {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+body footer section.links img {
+  width: 5vh;
+  padding: 10px;
+}
+
+/*螢幕寬度小於 700px 時的樣式*/
+@media screen and (max-width: 700px) {
+  body {
+    /*螢幕寬度小於 700px 時的 header 樣式*/
+  }
+  body header {
+    /*將 header 的 position 設置為 static，讓它不再固定在頂部*/
+    position: static;
+    /*將 logo 的 flex-direction 設置為 column，讓它變成垂直排列*/
+    /*將 nav 的 display 設置為 flex，讓它變成 flex 容器*/
+  }
+  body header section.logo {
+    flex-direction: column;
+  }
+  body header section.logo img {
+    /*將 logo 的寬度和高度設置為螢幕寬度的 50%*/
+    width: 50vw;
+    height: 50vw;
+  }
+  body header nav {
+    display: flex;
+    /*將 nav 的 flex-direction 設置為 column，讓它變成垂直排列*/
+    flex-direction: column;
+  }
+  body header nav ul {
+    /*將 ul 的 flex-direction 設置為 column，讓它變成垂直排列*/
+    flex-direction: column;
+  }
+  body header nav ul li {
+    /*將 li 的 padding 設置為 0.5rem 1.25rem*/
+    padding: 0.5rem 1.25rem;
+  }
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(2, 150, 248);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0059ff;
+}/*# sourceMappingURL=style.css.map */
